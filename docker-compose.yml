@@ -1,0 +1,36 @@
+
+version: '2.2'
+services:
+  mod4:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: mod4
+    ports:
+      - "8080"
+    networks:
+      - network1
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE: 'mod4'
+      MYSQL_USER: 'admin'
+      MYSQL_PASSWORD: 'mysql'
+      MYSQL_ROOT_PASSWORD: 'mysql'
+      VIRTUAL_PORT: 3306
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    volumes:
+      - "./db-schema.sql:/docker-entrypoint-initdb.d/1.sql"
+    restart: always
+    networks:
+      - network1
+    scale: 1
+
+volumes:
+  mod-db:
+
+networks:
+  network1:
