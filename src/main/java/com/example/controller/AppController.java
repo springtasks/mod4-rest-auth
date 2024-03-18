@@ -32,23 +32,23 @@ public class AppController {
     }
 
     @GetMapping(value = "/info")
-    public String infoPage() {
-        return INFO_PAGE;
+    public ModelAndView infoPage() {
+        return new ModelAndView(INFO_PAGE);
     }
 
     @GetMapping(value = "/about")
-    public String aboutPage() {
-        return ABOUT_PAGE;
+    public ModelAndView aboutPage() {
+        return new ModelAndView(ABOUT_PAGE);
     }
 
     @GetMapping(value = "/admin")
-    public String adminPage() {
-        return ADMIN_PAGE;
+    public ModelAndView adminPage() {
+        return new ModelAndView(ADMIN_PAGE);
     }
 
     @GetMapping(value = "/login")
-    public String loginPage() {
-        return LOGIN_PAGE;
+    public ModelAndView loginPage() {
+        return new ModelAndView(LOGIN_PAGE);
     }
 
 

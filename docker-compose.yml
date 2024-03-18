@@ -1,15 +1,6 @@
 
 version: '2.2'
 services:
-  mod4:
-    build:
-      context: ./
-      dockerfile: Dockerfile
-    image: mod4
-    ports:
-      - "8080"
-    networks:
-      - network1
   db:
     image: mysql:5.7
     environment:
@@ -28,7 +19,6 @@ services:
     networks:
       - network1
     scale: 1
-
 volumes:
   mod-db:
 

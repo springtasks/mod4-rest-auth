@@ -15,7 +15,7 @@ id INTEGER NOT NULL auto_increment,
   FOREIGN KEY (emailAddress) REFERENCES USER(emailAddress)
 );
 
-CREATE TABLE secret_token (id INTEGER NOT NULL auto_increment, url varchar(255), token_v varchar(255), primary key (id));
+CREATE TABLE Secret (id INTEGER NOT NULL auto_increment, url varchar(255), token_v varchar(255), primary key (id));
 
 CREATE UNIQUE INDEX USER_EMAIL
   on AUTHORITY (emailAddress,role);

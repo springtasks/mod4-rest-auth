@@ -7,6 +7,6 @@ import org.springframework.data.repository.query.Param;
 
 public interface TokenRepository extends JpaRepository<Token, Integer> {
 
-  @Query("SELECT token_v FROM secret_token WHERE url = :url ")
+  @Query("SELECT value FROM Token WHERE url = :url ")
   Token getByUrl(@Param("url") String url);
 }

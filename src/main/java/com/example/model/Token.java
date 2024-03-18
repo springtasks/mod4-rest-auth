@@ -10,7 +10,7 @@ import lombok.*;
 @Setter
 @Getter
 @AllArgsConstructor
-@Table(name = "secret_token")
+@Table(name = "Secret")
 public class Token {
 
   public Token () {}
