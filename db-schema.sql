@@ -23,16 +23,14 @@ CREATE UNIQUE INDEX USER_EMAIL
   -- User user/pass
   INSERT INTO USER
     values (1, 'user1@ROOT.COM',
-      '$2a$10$8.UnVuG9HHgffUDAlk8qfOuVGkqRzgVymGe07xd00DMxs.AQubh4a', FALSE, 0, NULL);
+      '37268335dd6931045bdcdf92623ff819a64244b53d0e746d438797349d4da578', FALSE, 0, NULL);
 
     INSERT INTO USER
       values ('user2@ROOT.COM',
-        '$2a$10$8.UnVuG9HHgffUDAlk8qfOuVGkqRzgVymGe07xd00DMxs.AQubh4a', FALSE, 0, NULL);
+        '37268335dd6931045bdcdf92623ff819a64244b53d0e746d438797349d4da578', FALSE, 0, NULL);
 
 
   INSERT INTO AUTHORITY
     values (1, 'user1@ROOT.COM', 'ROLE_USER');
   INSERT INTO AUTHORITY
     values (2, 'user2@ROOT.COM', 'ROLE_ADMIN');
-  INSERT INTO AUTHORITY
-    values (3, 'user3@ROOT.COM', 'ROLE_USER');

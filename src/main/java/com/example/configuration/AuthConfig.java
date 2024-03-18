@@ -35,12 +35,12 @@ public class AuthConfig {
                 .authorizeHttpRequests((authorize) ->
                         authorize
                                 .requestMatchers(new AntPathRequestMatcher("/login**")).permitAll()
-                                .requestMatchers(new AntPathRequestMatcher("/secret**")).hasAuthority("USER")
-                                .requestMatchers(new AntPathRequestMatcher("/secret/**")).hasAuthority("USER")
+                                .requestMatchers(new AntPathRequestMatcher("/secret**")).hasAuthority("ROLE_ADMIN")
+                                .requestMatchers(new AntPathRequestMatcher("/secret/**")).hasAuthority("ROLE_ADMIN")
                                 .requestMatchers(new AntPathRequestMatcher("/about")).permitAll()
                                 .requestMatchers(new AntPathRequestMatcher("/getAllBlockedUser")).permitAll()
-                                .requestMatchers(new AntPathRequestMatcher("/admin")).hasAuthority("USER")
-                                .requestMatchers(new AntPathRequestMatcher("/info")).hasAuthority("USER")
+                                .requestMatchers(new AntPathRequestMatcher("/admin")).hasAuthority("ROLE_ADMIN")
+                                .requestMatchers(new AntPathRequestMatcher("/info")).hasAuthority("ROLE_USER")
                                 .anyRequest().authenticated()
                 ).formLogin(
                         form -> form
